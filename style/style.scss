@@ -1,0 +1,206 @@
+body{
+    background: url(/images/mountain.jpg) no-repeat fixed;
+    background-size: 100% 40%;
+    background-color: rgb(207, 243, 255);
+}
+main {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .task_container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+
+        &>div {
+            width: 100%;
+        }
+    }
+}
+
+.todo_name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Roboto', sans-serif;
+
+    h1{
+        color: orange;
+        font-family: 'Neuton', serif;
+        text-decoration: underline;
+        text-decoration-color: rgb(231, 79, 24);
+    }
+    
+    h3{
+        color: blue;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+}
+
+.new_todo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.list_container ul {
+    padding: 0px;
+}
+
+.list_container ul .liElement {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    padding: 5px 15px;
+    margin-top: 5px;
+    background-color: rgb(18, 84, 88);
+    border-radius: 9999px;
+    border: 2px solid rgba(78, 235, 21, 0.804);
+    align-items: center;
+    box-shadow: 4px -1px 3px greenyellow;
+
+    .checkbox_edit,
+    .time_delete {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        #edit, #delete {
+            width: 20px;
+            height: 20px;
+            margin: auto 10px;
+            transform: all 0.15s;
+            cursor: pointer;
+            &:hover{
+                animation: popUp 0.3s ease 0s 1 alternate both;
+            }
+        }
+        #edit{
+            stroke: lightblue;
+
+            &:hover{
+                stroke: rgb(60, 118, 225);
+            }
+        }
+        #delete{
+            stroke: rgb(228, 87, 87);
+
+            &:hover{
+                stroke: rgb(233, 40, 40);
+            }
+        }
+    }
+
+    .checkbox_edit {
+        flex: 1;
+    }
+
+    .time_delete {
+        flex: 2;
+        display: flex;
+        justify-content: flex-end;
+
+        h5{
+            color: lightblue;
+        }
+    }
+
+    .h3Element {
+        flex: 5;
+        color: wheat;
+        text-align: center;
+    }
+}
+.new_todos_input{
+    width: 50%;
+    padding: 10px;
+    border-top-left-radius: 9999px;
+    border-bottom-left-radius: 9999px;
+    border: none;
+    outline: none;
+    background-color: lightblue;
+    text-align: center;
+    font-size: medium;
+    transition: all 0.5s;
+    &:hover{
+        background-color: rgb(106, 168, 189);
+    }
+    &::placeholder{
+        font-weight: 600;
+    }
+}
+.add_btn{
+    font-size: medium;
+    padding: 10px;
+    padding-right: 15px;
+    background-color: lightblue;
+    border-top-right-radius: 9999px;
+    border-bottom-right-radius: 9999px;
+    color: rgb(92, 92, 92);
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover{
+        background-color: rgb(81, 102, 219);
+        color: wheat;
+    }
+}
+.noInput{
+    color: red;
+    height: fit-content;
+}
+@keyframes popUp {
+    from{
+        transform: rotate(40deg);
+    }
+    to{
+        transform: translateY(-8px);
+    }
+}
+.empty{
+    text-align: center;
+    border-left: 5px solid royalblue;
+    border-right: 5px solid royalblue;
+    margin: auto 30px;
+    color: rgb(18, 72, 233);
+}
+.addedTime{
+    text-align: center;
+    font-family: Roboto;
+    color: white;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+
+#clear_button{
+    margin-top: 10px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    background-color: red;
+    font-size: medium;
+    font-weight: 500;
+    font-family: 'Neuton', serif;
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover{
+        opacity: 0.9;
+        background-color: rgb(243, 10, 10);
+    }
+    &:active{
+        opacity: 0.7;
+        background-color: rgb(236, 24, 24);
+    }
+}
